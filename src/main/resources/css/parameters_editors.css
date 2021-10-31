@@ -1,0 +1,193 @@
+@font-face {
+    src: url('SourceCodePro-Regular.ttf');
+}
+
+.list-view {
+    -fx-border-width: 0px;
+    -fx-border-color: #8a8a8a;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-accent: #d1e4ff;
+    -fx-focus-color: #d1e4ff;
+    -fx-padding: 0 0 0 0;
+    -fx-background-color: #e6e3e3;
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0, 0, 0;
+}
+
+.list-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.list-view:selected {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 0 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.list-cell:selected {
+    -fx-background-color: #d1e4ff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.table-view {
+    -fx-background-insets: 0;
+    -fx-border-width: 0px;
+    -fx-background-color: #e6e3e3;
+    -fx-border-color: #8a8a8a;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-accent: #d1e4ff;
+    -fx-focus-color: #d1e4ff;
+    -fx-padding: 0 0 0 0;
+}
+
+.table-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.table-view:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.table-row-cell {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-size: 11;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d1e4ff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/*.table-column {
+    -fx-alignment: CENTER-LEFT;
+}*/
+
+.table-row-cell:empty {
+    -fx-background-color: white;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+
+/****************************************************************************************/
+
+.dark_theme .list-view {
+    -fx-border-width: 0px;
+    -fx-border-color: #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-accent: #7d7c7c;
+    -fx-focus-color: #7d7c7c;
+    -fx-padding: 0 0 0 0;
+    -fx-background-color: #7d7c7c;
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0, 0, 0;
+}
+
+.dark_theme .list-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.dark_theme .list-view:selected {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 0 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .list-cell:selected {
+    -fx-background-color: #7d7c7c;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-view {
+    -fx-background-insets: 0;
+    -fx-border-width: 0px;
+    -fx-background-color: #7d7c7c;
+    -fx-border-color: #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-accent: #7d7c7c;
+    -fx-focus-color: #7d7c7c;
+    -fx-padding: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-view:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: #4c4c4c;
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-row-cell {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-size: 11;
+    -fx-text-fill: white;
+    -fx-display-caret:true;
+    -fx-background-color: #4c4c4c;
+
+    /*-fx-border-color: #4c4c4c;*/
+    -fx-table-cell-border-color: #4c4c4c;
+}
+
+.dark_theme .table-row-cell:selected {
+    -fx-background-color: #ababab;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+    -fx-table-cell-border-color: #ababab;
+}
+
+
+.dark_theme .table-column {
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-row-cell:empty {
+    -fx-background-color: 7d7c7c;
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-row-cell:empty .table-cell {
+    -fx-background-color: #7d7c7c;
+    -fx-border-width: 0px;
+    -fx-text-fill: white;
+}
+
+.dark_theme .table-row-cell:even {
+    -fx-background-color: #7d7c7c;
+    -fx-text-fill: white;
+}
+.dark_theme .table-row-cell:odd {
+    -fx-background-color: #7d7c7c;
+    -fx-text-fill: white;
+}

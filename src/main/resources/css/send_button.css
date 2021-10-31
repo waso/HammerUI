@@ -1,0 +1,18 @@
+.button {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 13;
+    -fx-background-color: #12b044;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+    -fx-padding: 0 0 0 0;
+    -fx-border-width: 0px;
+}
+
+.button:pressed {
+    -fx-background-color: #13d14f;
+}
+
+.button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

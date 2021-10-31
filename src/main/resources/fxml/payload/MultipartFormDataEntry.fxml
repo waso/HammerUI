@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="486.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wsojka.hammerui.controllers.payload.MultipartFormDataEntryController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" VBox.vgrow="NEVER">
+               <children>
+                  <ToggleButton fx:id="textButton" contentDisplay="CENTER" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#switchToText" prefWidth="150.0" selected="true" styleClass="left-pill" text="text" HBox.hgrow="ALWAYS">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="formdatatype" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ToggleButton>
+                  <ToggleButton fx:id="fileButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#switchToFile" prefWidth="150.0" styleClass="right-pill" text="file" toggleGroup="$formdatatype" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ToggleButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../../css/hidden_tab.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab style="-fx-background-color: #FFFFFF;" text="text">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+                                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="54.0" valignment="BOTTOM" vgrow="NEVER" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Name:" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin></Label>
+                                    <Label text="Value:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <TextField fx:id="textEntryName" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></TextField>
+                                    <TextField fx:id="textEntryValue" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin></TextField>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="file">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="NEVER" />
+                                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="42.0" vgrow="NEVER" />
+                                  <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="38.0" vgrow="NEVER" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox GridPane.columnIndex="1">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="fileFieldName" prefHeight="26.0" prefWidth="314.0" VBox.vgrow="ALWAYS">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </VBox.margin></TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefWidth="100.0">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="filePath" prefHeight="26.0" prefWidth="314.0" VBox.vgrow="ALWAYS">
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </VBox.margin></TextField>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT">
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#selectFile" prefWidth="100.0" text="Select file" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label text="Name:" />
+                                    <Label text="File:" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <AnchorPane>
+               <children>
+                  <HBox alignment="BOTTOM_RIGHT" layoutY="44.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ButtonBar nodeOrientation="LEFT_TO_RIGHT" HBox.hgrow="ALWAYS">
+                          <buttons>
+                              <Button fx:id="cancelButton" alignment="CENTER" cancelButton="true" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#cancelAction" text="Cancel" />
+                            <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" onAction="#okAction" text="OK" />
+                          </buttons>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ButtonBar>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

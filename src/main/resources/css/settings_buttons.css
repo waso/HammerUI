@@ -1,0 +1,12 @@
+.settings {
+    -fx-background-color: #8a8a8a, white;
+    -fx-alignment: CENTER;
+    -fx-background-insets: 1, 2;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.settings:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

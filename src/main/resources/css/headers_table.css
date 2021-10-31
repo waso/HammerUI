@@ -1,0 +1,14 @@
+.text-field:focused {
+-fx-background-color: null;
+-fx-background-insets: 0, 1, 2;
+-fx-background-radius: 1;
+}
+
+.text-field{
+-fx-border-color: null;
+-fx-border-radius: 0;
+-fx-select-on-focus:false;
+}
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}

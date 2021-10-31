@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="85.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wsojka.hammerui.controllers.authentication.AWSAuthenticationController">
+   <children>
+      <GridPane prefHeight="88.0" prefWidth="636.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="124.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="180.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="116.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Access Key:">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding></Label>
+            <Label text="Secret Key: " GridPane.rowIndex="1" />
+            <TextField fx:id="accessKey" GridPane.columnIndex="1" />
+            <TextField fx:id="secretKey" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label layoutX="45.0" layoutY="20.0" text="Region:" GridPane.columnIndex="2">
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="50.0" layoutY="90.0" text="Service:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="region" layoutX="133.0" layoutY="15.0" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="service" layoutX="133.0" layoutY="85.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+.table-row-cell {
+    -fx-font-family: "Courier New";
+    -fx-font-size: 11;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+}
+
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: white;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+.noheader:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.noheader .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}

@@ -1,0 +1,1 @@
+This folder contains licenses from tools and libraries that are part of HammerUI project.

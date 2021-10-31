@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorRoot" minHeight="350.0" minWidth="500.0" prefHeight="393.0" prefWidth="504.0" stylesheets="@../css/header_dialog.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wsojka.hammerui.controllers.PreferencesViewController">
+    <children>
+      <VBox prefHeight="459.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="60.0" prefHeight="60.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="applicationSettingsBtn" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#showApplicationSettings" prefHeight="50.0" prefWidth="100.0" styleClass="settings" stylesheets="@../css/settings_buttons.css" text="Applicaiton">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="projectSettingsBtn" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#showProjectSettings" prefHeight="50.0" prefWidth="100.0" styleClass="settings" stylesheets="@../css/settings_buttons.css" text="Project">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="10.0">
+               <children>
+                  <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <TabPane fx:id="settingsTabs" stylesheets="@../css/hidden_tab.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="application_settings">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <GridPane prefWidth="350.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="426.0" minWidth="64.0" prefWidth="255.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="245.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Open last project at startup:" GridPane.rowIndex="1" />
+                                          <Label text="User-Agent:" GridPane.rowIndex="2" />
+                                          <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <CheckBox fx:id="appOpenLastProjectAtStartup" mnemonicParsing="false">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </CheckBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                             <children>
+                                                <TextField fx:id="appUserAgent" maxWidth="1.7976931348623157E308" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin></TextField>
+                                             </children>
+                                          </HBox>
+                                          <Label text="Auto-save project at exit:" />
+                                          <CheckBox fx:id="appAutoSave" mnemonicParsing="false" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <Label text="Application Theme:" GridPane.rowIndex="3" />
+                                          <Label text="Editor Theme:" GridPane.rowIndex="4" />
+                                          <ChoiceBox fx:id="appTheme" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </ChoiceBox>
+                                          <ChoiceBox fx:id="editorTheme" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </ChoiceBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="project_settings">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                      <GridPane prefWidth="350.0">
+                                          <columnConstraints>
+                                              <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="426.0" minWidth="64.0" prefWidth="255.0" />
+                                              <ColumnConstraints hgrow="ALWAYS" maxWidth="427.0" minWidth="10.0" prefWidth="245.0" />
+                                          </columnConstraints>
+                                          <rowConstraints>
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                              <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                                          </rowConstraints>
+                                          <children>
+                                              <Label text="connection timeout:" GridPane.rowIndex="1" />
+                                          <Label text="socket read timeout:" GridPane.rowIndex="2" />
+                                          <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <TextField fx:id="projectConnectionTimeout" prefWidth="100.0">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <Label text="ms">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                             <children>
+                                                <TextField fx:id="projectSocketReadTimeout" prefWidth="100.0" />
+                                                <Label text="ms">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <Label text="follow HTTP 301 redirections:" />
+                                          <CheckBox fx:id="projectFollowRedirections" mnemonicParsing="false" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <Label text="ignore SSL certificate errors:" GridPane.rowIndex="3" />
+                                          <CheckBox fx:id="projectIgnoreSslErrors" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <Label text="use TCP no delay:" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <CheckBox fx:id="projectUseTcpNodelay" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          </children>
+                                       <padding>
+                                          <Insets left="5.0" right="10.0" top="5.0" />
+                                       </padding>
+                                      </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="10.0">
+               <children>
+                  <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin>
+            </HBox>
+            <GridPane minWidth="350.0">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="426.0" minWidth="61.0" prefWidth="63.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="428.0" minWidth="10.0" prefWidth="426.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="352.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#resetSettings" prefHeight="26.0" prefWidth="92.0" text="Reset" />
+                        <Button mnemonicParsing="false" onAction="#apply" prefHeight="26.0" prefWidth="92.0" text="Apply">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="cancelButton" alignment="CENTER" cancelButton="true" mnemonicParsing="false" onAction="#cancelDialog" prefHeight="26.0" prefWidth="92.0" text="Cancel">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin></Button>
+                        <Button fx:id="okButton" defaultButton="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#submit" prefHeight="26.0" prefWidth="92.0" text="OK">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="10.0" top="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+    </children>
+</AnchorPane>

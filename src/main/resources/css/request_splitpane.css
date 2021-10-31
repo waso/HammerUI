@@ -1,0 +1,10 @@
+#splitPane {
+    -fx-background-color: null;
+    -fx-padding: 0px;
+}
+
+#splitPane *.split-pane-divider,#splitPane *.vertical-grabber,#splitPane *.horizontal-grabber {
+    -fx-background-color: #c4c4c4;
+    -fx-border-color: #c4c4c4;
+    -fx-padding: 0px;
+}

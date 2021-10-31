@@ -1,0 +1,46 @@
+/*
+ * Copyright (C) 2021 Waldemar Sojka, All Rights Reserved
+ */
+package com.wsojka.hammerui.enums;
+
+public enum EditorTheme {
+    Ambiance,
+    Chaos,
+    Chrome,
+    Clouds,
+    CloudsMidnight,
+    Cobalt,
+    CrimsonEditor,
+    Dawn,
+    Dracula,
+    Dreamweaver,
+    Eclipse,
+    Github,
+    Gob,
+    Gruvbox,
+    IdleFingers,
+    Iplastic,
+    Katzenmilch,
+    KrTheme,
+    Kuroir,
+    Merbivore,
+    MerbivoreSoft,
+    MonoIndustrial,
+    Monokai,
+    NordDark,
+    PastelOnDark,
+    SolarizedDark,
+    SolarizedLight,
+    Sqlserver,
+    Terminal,
+    Textmate,
+    Tomorrow,
+    TomorrowNight,
+    TomorrowNightBlue,
+    TomorrowNightBright,
+    TomorrowNightEighties,
+    Twilight,
+    VibrantInk,
+    Xcode,
+    ;
+}

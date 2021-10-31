@@ -1,0 +1,28 @@
+.dark_theme  {
+    -fx-background-color: #595757;
+    -fx-text-fill: white ;
+}
+
+.dark_theme .label {
+    -fx-text-fill: white ;
+}
+
+.dark_theme .button {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .button:hover {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, #ababab;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}

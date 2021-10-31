@@ -1,0 +1,76 @@
+#hiddenSplitter {
+    -fx-background-color: null;
+    -fx-padding: 0px;
+}
+#hiddenSplitter *.split-pane-divider,
+        #hiddenSplitter *.vertical-grabber,
+        #hiddenSplitter *.horizontal-grabber {
+    -fx-background-color: #4c4c4c;
+    -fx-border-color: null;
+    -fx-padding: 0px;
+}
+
+#top_pane{
+    -fx-background-image: url("background_about.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 600 200;
+    -fx-background-position: center;
+}
+
+.bottom_pane {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 13;
+    -fx-text-fill: white;
+}
+
+#bottom_pane{
+    -fx-background-color: #727375;
+}
+
+.button {
+    -fx-border-color: transparent;
+    -fx-background-color: #f2f2f2;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 0 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-radius: 0.3em;
+}
+
+.button:focused {
+    -fx-border-color: transparent;
+    -fx-background-color: #f2f2f2;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 0 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+}
+.button:hover {
+    -fx-border-color: transparent;
+    -fx-background-color: #b3b3b3;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 0 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+}
+.button:selected {
+    -fx-border-color: transparent;
+    -fx-background-color: #f2f2f2;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 0 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+}
+.button:selected:focused {
+    -fx-border-color: transparent;
+    -fx-background-color: #f2f2f2;
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 0 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+}

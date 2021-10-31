@@ -1,0 +1,20 @@
+{
+  "_id": "klJHlkjhJHfhgfHGFhj",
+  "index": 0,
+  "guid": "2b78ce86-d9c6-4181-a9ff-12341234",
+  "isActive": true,
+  "balance": "$2,680.56",
+  "regional": "ąśżźćłóę",
+  "picture": "http://aaa.bbb/32x32",
+  "age": 38,
+  "eyeColor": "blue",
+  "name": {
+    "first": "Adam",
+    "last": "Foo"
+  },
+  "test": [
+    {"name": "aaa"},
+    {"name": "bbb"},
+    {"name": "ccc"}
+  ]
+}

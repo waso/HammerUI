@@ -1,0 +1,320 @@
+.toggle-button.left-pill {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #f5f2f2;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button.center-pill {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #f5f2f2;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button.right-pill {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #f5f2f2;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/*************************************************************************/
+
+.toggle-button.left-pill:focused {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button.center-pill:focused {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button.right-pill:focused {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/*************************************************************************/
+
+.toggle-button.left-pill:hover {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button.center-pill:hover {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button.right-pill:hover {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/*************************************************************************/
+
+.toggle-button:selected.left-pill {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button:selected.center-pill {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button:selected.right-pill {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
+/*************************************************************************/
+
+.toggle-button:selected.left-pill:focused {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button:selected.center-pill:focused {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-border-width: 1 0 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.toggle-button:selected.right-pill:focused {
+    -fx-border-color: #a6a6a6;
+    -fx-background-color: #d6d6d6;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-width: 1 1 1 1;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
+
+
+
+/***************************************************************************************************************************
+ ****************************************************************************************************************************/
+
+
+ .dark_theme .toggle-button.left-pill {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #4c4c4c;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: white;
+ }
+ .dark_theme .toggle-button.center-pill {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #4c4c4c;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: white;
+ }
+.dark_theme  .toggle-button.right-pill {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #4c4c4c;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 1 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: white;
+ }
+
+ /*************************************************************************/
+
+ .dark_theme .toggle-button.left-pill:focused {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button.center-pill:focused {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button.right-pill:focused {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 1 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+
+ /*************************************************************************/
+
+.dark_theme  .toggle-button.left-pill:hover {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button.center-pill:hover {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button.right-pill:hover {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-radius: 0;
+     -fx-background-insets: 0;
+     -fx-border-width: 1 1 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+
+ /*************************************************************************/
+
+ .dark_theme .toggle-button:selected.left-pill {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-insets: 0;
+     -fx-background-radius: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button:selected.center-pill {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-insets: 0;
+     -fx-background-radius: 0, 0, 0, 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button:selected.right-pill {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-insets: 0;
+     -fx-background-radius: 0;
+     -fx-border-width: 1 1 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+
+
+ /*************************************************************************/
+
+ .dark_theme .toggle-button:selected.left-pill:focused {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-insets: 0;
+     -fx-background-radius: 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button:selected.center-pill:focused {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-insets: 0;
+     -fx-background-radius: 0, 0, 0, 0;
+     -fx-border-width: 1 0 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }
+ .dark_theme .toggle-button:selected.right-pill:focused {
+     -fx-border-color: #a6a6a6;
+     -fx-background-color: #d6d6d6;
+     -fx-background-insets: 0;
+     -fx-background-radius: 0;
+     -fx-border-width: 1 1 1 1;
+     -fx-focus-color: transparent;
+     -fx-faint-focus-color: transparent;
+     -fx-text-fill: black;
+ }

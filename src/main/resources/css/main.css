@@ -1,0 +1,85 @@
+.root {
+    -fx-accent: #4c4c4c;
+    -fx-focus-color: #4c4c4c;
+}
+
+.button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tree-view {
+    -fx-background-color: #727375 ;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+    -fx-padding: 0 0 0 0;
+}
+
+.tree-cell {
+    -fx-background-color: #727375 ;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+    -fx-padding: 3 0 3 0;
+}
+
+.tree-cell:hover {
+    -fx-background-color: #9e9e9e;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.tree-cell:empty:hover {
+    -fx-background-color: #727375;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.tree-cell:selected {
+    -fx-background-color: #68a4fc;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+/************************************************************************/
+
+.dark_theme .root {
+    -fx-accent: #4c4c4c;
+    -fx-focus-color: #4c4c4c;
+}
+
+.dark_theme .button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.dark_theme .tree-view {
+    -fx-background-color: #4c4c4c ;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+    -fx-padding: 0 0 0 0;
+}
+
+.dark_theme .tree-cell {
+    -fx-background-color: #4c4c4c ;
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+    -fx-padding: 3 0 3 0;
+}
+
+.dark_theme .tree-cell:hover {
+    -fx-background-color: #9e9e9e;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.dark_theme .tree-cell:empty:hover {
+    -fx-background-color: #4c4c4c;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.dark_theme .tree-cell:selected {
+    -fx-background-color: #68a4fc;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}

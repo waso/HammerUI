@@ -1,0 +1,8 @@
+.scroll-pane {
+    -fx-border-width: 0 0 0 0;
+    -fx-background-color:transparent;
+}
+
+.dark_theme .scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}

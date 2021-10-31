@@ -1,0 +1,131 @@
+@font-face {
+    src: url('SourceCodePro-Regular.ttf');
+}
+
+.text-field {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, white;
+    -fx-border-width: 0px;
+}
+
+.text-field:focused {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, white;
+    -fx-border-width: 0px;
+}
+
+
+.combo-box{
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, white;
+    -fx-border-width: 0px;
+}
+
+.combo-box .arrow-button{
+    -fx-background-color:white;
+    -fx-background-insets: 1, 2 2 2 0;
+    -fx-background-color: #c4c4c4, white;
+    -fx-border-width: 1px;
+}
+.combo-box .list-cell{
+    -fx-background-color:white;
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #000000;
+}
+
+.combo-box .list-cell:focused{
+    -fx-background-color:#d1e4ff;
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #000000;
+}
+
+.combo-box .list-view {
+    -fx-padding: 5.0 5.0;
+    -fx-border-radius: 0.5 0.5 5.0 5.0;
+    -fx-background-radius: 0.5 0.5 5.0 5.0;
+}
+
+
+/**************************************************************************/
+
+.dark_theme .text-field {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #FFFFFF;
+    -fx-display-caret:true;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+    -fx-border-width: 0px;
+}
+
+.dark_theme .text-field:focused {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #FFFFFF;
+    -fx-display-caret:true;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+    -fx-border-width: 0px;
+}
+
+
+.dark_theme .combo-box{
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+    -fx-border-width: 0px;
+}
+
+.dark_theme .combo-box .arrow-button {
+    -fx-background-color: #e0e0e0;
+    -fx-background-insets: 1, 2 2 2 0;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+    -fx-border-width: 1px;
+    -fx-mark-color: #e0e0e0;
+}
+
+.dark_theme .combo-box .list-cell {
+    -fx-border-color: #4c4c4c;
+    -fx-background-color:#4c4c4c;
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #FFFFFF;
+}
+
+.dark_theme .combo-box .list-cell:focused{
+    -fx-background-color: #ababab;
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #FFFFFF;
+}
+
+.dark_theme .combo-box .list-view {
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+    -fx-border-width: 0px;
+}

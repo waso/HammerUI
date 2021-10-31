@@ -1,0 +1,70 @@
+.dropdown-menu {
+    -fx-background-color: white;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.menu-button > .arrow-button {
+    -fx-mark-color: black;
+}
+
+.menu-item .label {
+    -fx-text-fill: black;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.menu-item:focused {
+    -fx-background-color: #4c4c4c;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0, 0, 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+/*******************************************************************************/
+
+.dark_theme .dropdown-menu {
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.dark_theme .dropdown-menu > .label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.dark_theme .menu-button > .arrow-button {
+    -fx-mark-color: #e0e0e0;
+}
+
+.dark_theme .menu-item .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.dark_theme .menu-item:focused {
+    -fx-background-color: #a6a6a6;
+}
+
+.dark_theme .menu-item:focused .label {
+    -fx-text-fill: #4c4c4c;
+}
+
+.dark_theme .context-menu {
+    -fx-background-color: #4c4c4c;
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0, 0, 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}

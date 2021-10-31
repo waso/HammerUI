@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wsojka.hammerui.controllers.RequestViewController">
+    <children>
+        <GridPane fx:id="gridPane" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" valignment="CENTER" />
+                <RowConstraints fx:id="fixedRow" maxHeight="-Infinity" valignment="TOP" />
+                <RowConstraints minHeight="10.0" prefHeight="400.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <HBox fx:id="urlTopParent" minHeight="30.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <ChoiceBox fx:id="httpMethodsList" minHeight="30.0" minWidth="87.0" prefHeight="30.0" stylesheets="@../css/http_method.css">
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </ChoiceBox>
+                  <HBox fx:id="urlParent" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <children>
+                                <ComboBox fx:id="url" editable="true" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" prefHeight="30.0" prefWidth="600.0" styleClass="combo-box-base" stylesheets="@../css/url_editbox.css" HBox.hgrow="ALWAYS">
+                                    <cursor>
+                                        <Cursor fx:constant="DEFAULT" />
+                                    </cursor>
+                                </ComboBox>
+                     </children>
+                  </HBox>
+                        <Button fx:id="sendButton" minHeight="29.0" minWidth="90.0" mnemonicParsing="false" onAction="#onSendButtonClick" prefHeight="29.0" stylesheets="@../css/send_button.css" text="Send" HBox.hgrow="NEVER">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                    </GridPane.margin>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox fx:id="fixedHbox" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="NEVER">
+                    <children>
+                        <ToggleButton fx:id="requestHeadersButton" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showHeadersOptions" prefWidth="90.0" selected="true" styleClass="left-pill" stylesheets="@../css/request_pill_buttons.css" text="Headers">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                            <toggleGroup>
+                                <ToggleGroup fx:id="request" />
+                            </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="requestAuthButton" maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#showAuthenticationOptions" prefWidth="120.0" styleClass="center-pill" stylesheets="@../css/request_pill_buttons.css" text="Authentication" toggleGroup="$request" />
+                        <ToggleButton fx:id="requestPayloadButton" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showPayloadOptions" prefWidth="90.0" styleClass="right-pill" stylesheets="@../css/request_pill_buttons.css" text="Payload" toggleGroup="$request" />
+                    </children>
+                    <GridPane.margin>
+                        <Insets left="5.0" top="5.0" />
+                    </GridPane.margin>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+                </HBox>
+                <AnchorPane GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+                    <children>
+                        <SplitPane fx:id="splitPane" dividerPositions="0.3" orientation="VERTICAL" stylesheets="@../css/request_splitpane.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" SplitPane.resizableWithParent="false">
+                                    <children>
+                                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <HBox fx:id="floatingHbox" maxHeight="0.0" maxWidth="1.7976931348623157E308" minHeight="0.0" prefHeight="0.0" visible="false" VBox.vgrow="NEVER">
+                                                    <children>
+                                                        <ToggleButton fx:id="requestHeadersButton1" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showHeadersOptions" prefWidth="90.0" selected="true" styleClass="left-pill" stylesheets="@../css/request_pill_buttons.css" text="Headers">
+                                                            <HBox.margin>
+                                                                <Insets />
+                                                            </HBox.margin>
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="request1" />
+                                                            </toggleGroup>
+                                                        </ToggleButton>
+                                                        <ToggleButton fx:id="requestAuthButton1" maxWidth="120.0" minWidth="120.0" mnemonicParsing="false" onAction="#showAuthenticationOptions" prefWidth="120.0" styleClass="center-pill" stylesheets="@../css/request_pill_buttons.css" text="Authentication" toggleGroup="$request1" />
+                                                        <ToggleButton fx:id="requestPayloadButton1" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showPayloadOptions" prefWidth="90.0" styleClass="right-pill" stylesheets="@../css/request_pill_buttons.css" text="Payload" toggleGroup="$request1" />
+                                                    </children>
+                                                    <VBox.margin>
+                                                        <Insets left="5.0" top="5.0" />
+                                                    </VBox.margin>
+                                                </HBox>
+                                                <TabPane fx:id="optionsPane" stylesheets="@../css/hidden_tab.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                                    <tabs>
+                                                        <Tab text="Headers">
+                                                            <content>
+                                                                <AnchorPane>
+                                                                    <children>
+                                                      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" stylesheets="@../css/headers_scroll_pane.css" VBox.vgrow="ALWAYS">
+                                                               <content>
+                                                                  <GridPane fx:id="headersView" maxWidth="1.7976931348623157E308" stylesheets="@../css/value_view.css">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                                                                      <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="306.0" />
+                                                                      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="264.0" />
+                                                                        <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+                                                                    </columnConstraints>
+                                                                  </GridPane>
+                                                               </content>
+                                                            </ScrollPane>
+                                                            <Button minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#addNewHeaderEntry" stylesheets="@../css/button_simple.css" text="Add Header">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="Authentication">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                            <children>
+                                                                                <ChoiceBox fx:id="authenticationList" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" styleClass="http_method_menu" stylesheets="@../css/http_method.css">
+                                                                                    <VBox.margin>
+                                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                                    </VBox.margin>
+                                                                                </ChoiceBox>
+                                                                                <HBox minWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                                                                    <children>
+                                                                                        <Pane fx:id="authenticationDetailsPane" prefHeight="100.0" prefWidth="509.0" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                            <padding>
+                                                                                <Insets bottom="2.0" />
+                                                                            </padding>
+                                                                        </VBox>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="Payload">
+                                                            <content>
+                                                                <AnchorPane>
+                                                                    <children>
+                                                                        <VBox layoutX="4.0" maxHeight="-Infinity" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                            <children>
+                                                                                <HBox alignment="CENTER_LEFT" prefWidth="455.0" stylesheets="@../css/pill_button.css">
+                                                                                    <children>
+                                                                                        <ChoiceBox fx:id="requestPayloadType" prefWidth="200.0" styleClass="http_method_menu" stylesheets="@../css/http_method.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets />
+                                                                                            </HBox.margin>
+                                                                                        </ChoiceBox>
+                                                                                        <Button fx:id="copyPostRawStringButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#copyPostRawString" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="10.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/content_copy-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Copy" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button fx:id="pastePostRawStringButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#pastePostRawString" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                     <graphic>
+                                                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../icons-material/content_paste-48px.svg.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Paste" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button fx:id="cutPostRawStringButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#cutPostRawString" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/content_cut-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Cut" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button fx:id="formatPostRawStringButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#formatPostRawString" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/format_align_left-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Format json" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button fx:id="undoPostRawStringButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#undoPostRawString" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/arrow_back-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Undo" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button fx:id="redoPostRawStringButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#redoPostRawString" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" right="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/arrow_forward-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Redo" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                    </children>
+                                                                                    <opaqueInsets>
+                                                                                        <Insets />
+                                                                                    </opaqueInsets>
+                                                                                    <VBox.margin>
+                                                                                        <Insets left="4.0" />
+                                                                                    </VBox.margin>
+                                                                                </HBox>
+                                                                                <TabPane fx:id="requestBodyOptions" focusTraversable="false" style="" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                                                                    <tabs>
+                                                                                        <Tab text="text">
+                                                                                            <content>
+                                                                                                <AnchorPane>
+                                                                                                    <children>
+                                                                                                        <WebView fx:id="postRawString" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                                                    </children>
+                                                                                                </AnchorPane>
+                                                                                            </content>
+                                                                                        </Tab>
+                                                                                        <Tab text="file">
+                                                                                            <content>
+                                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                                                    <children>
+                                                                                                        <GridPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                                            <columnConstraints>
+                                                                                                                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                                                                                                                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" />
+                                                                                                            </columnConstraints>
+                                                                                                            <rowConstraints>
+                                                                                                                <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="60.0" vgrow="NEVER" />
+                                                                                                                <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="60.0" vgrow="NEVER" />
+                                                                                                                <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="42.0" vgrow="NEVER" />
+                                                                                                                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="38.0" vgrow="NEVER" />
+                                                                                                            </rowConstraints>
+                                                                                                            <children>
+                                                                                                                <HBox GridPane.columnIndex="1">
+                                                                                                                    <children>
+                                                                                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                                                                                            <children>
+                                                                                                                                <TextField fx:id="fileFieldName" prefHeight="26.0" prefWidth="314.0" text="text/html" VBox.vgrow="ALWAYS">
+                                                                                                                                    <VBox.margin>
+                                                                                                                                        <Insets left="5.0" />
+                                                                                                                                    </VBox.margin>
+                                                                                                                                </TextField>
+                                                                                                                            </children>
+                                                                                                                        </VBox>
+                                                                                                                        <VBox alignment="CENTER_LEFT" prefWidth="100.0">
+                                                                                                                            <HBox.margin>
+                                                                                                                                <Insets left="10.0" right="10.0" />
+                                                                                                                            </HBox.margin>
+                                                                                                                        </VBox>
+                                                                                                                    </children>
+                                                                                                                </HBox>
+                                                                                                                <HBox layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                                                                                    <children>
+                                                                                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                                                                                            <children>
+                                                                                                                                <TextField fx:id="filePath" prefHeight="26.0" prefWidth="314.0" VBox.vgrow="ALWAYS">
+                                                                                                                                    <VBox.margin>
+                                                                                                                                        <Insets left="5.0" />
+                                                                                                                                    </VBox.margin>
+                                                                                                                                </TextField>
+                                                                                                                            </children>
+                                                                                                                        </VBox>
+                                                                                                                        <VBox alignment="CENTER_LEFT">
+                                                                                                                            <HBox.margin>
+                                                                                                                                <Insets left="10.0" right="10.0" />
+                                                                                                                            </HBox.margin>
+                                                                                                                            <children>
+                                                                                                                                <Button mnemonicParsing="false" onAction="#selectFile" prefWidth="100.0" text="Select file" />
+                                                                                                                            </children>
+                                                                                                                        </VBox>
+                                                                                                                    </children>
+                                                                                                                </HBox>
+                                                                                                                <Label text="Content-Type:" />
+                                                                                                                <Label text="File:" GridPane.rowIndex="1" />
+                                                                                                            </children>
+                                                                                                            <padding>
+                                                                                                                <Insets left="5.0" />
+                                                                                                            </padding>
+                                                                                                        </GridPane>
+                                                                                                    </children>
+                                                                                                </AnchorPane>
+                                                                                            </content>
+                                                                                        </Tab>
+                                                                                        <Tab text="xwwwformurlencoded">
+                                                                                            <content>
+                                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                                                    <children>
+                                                                                                        <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                                            <children>
+                                                                                                                <TableView fx:id="appFormUrlencodedDataTable" stylesheets="@../css/parameters_editors.css" tableMenuButtonVisible="true" HBox.hgrow="ALWAYS">
+                                                                                                                    <HBox.margin>
+                                                                                                                        <Insets left="2.0" right="5.0" />
+                                                                                                                    </HBox.margin>
+                                                                                                                </TableView>
+                                                                                                                <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="30.0" prefHeight="50.0" prefWidth="30.0">
+                                                                                                                    <children>
+                                                                                                                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#addFormUrlencodedEntry" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                                                            <VBox.margin>
+                                                                                                                                <Insets left="5.0" right="10.0" />
+                                                                                                                            </VBox.margin>
+                                                                                                                            <font>
+                                                                                                                                <Font size="12.0" />
+                                                                                                                            </font>
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../icons-png/plus.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                                                        </Button>
+                                                                                                                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#deleteFormUrlencodedEntry" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                                                            <VBox.margin>
+                                                                                                                                <Insets left="5.0" right="10.0" top="5.0" />
+                                                                                                                            </VBox.margin>
+                                                                                                                            <font>
+                                                                                                                                <Font size="11.0" />
+                                                                                                                            </font>
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../icons-png/minus.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                                                        </Button>
+                                                                                                                        <Button maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#editFormUrlencodedEntry" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                                                            <VBox.margin>
+                                                                                                                                <Insets left="5.0" right="10.0" top="5.0" />
+                                                                                                                            </VBox.margin>
+                                                                                                                            <font>
+                                                                                                                                <Font size="12.0" />
+                                                                                                                            </font>
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../icons-material/edit-48px.svg.png" />
+                                                                                                   </image></ImageView>
+                                                                                             </graphic>
+                                                                                                                        </Button>
+                                                                                                                    </children>
+                                                                                                                </VBox>
+                                                                                                            </children>
+                                                                                                        </HBox>
+                                                                                                    </children>
+                                                                                                </AnchorPane>
+                                                                                            </content>
+                                                                                        </Tab>
+                                                                                        <Tab text="form-data">
+                                                                                            <content>
+                                                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                                                    <children>
+                                                                                                        <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                                            <children>
+                                                                                                                <TableView fx:id="multipartFormDataTable" stylesheets="@../css/parameters_editors.css" tableMenuButtonVisible="true" HBox.hgrow="ALWAYS">
+                                                                                                                    <HBox.margin>
+                                                                                                                        <Insets left="2.0" right="5.0" />
+                                                                                                                    </HBox.margin>
+                                                                                                                </TableView>
+                                                                                                                <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="30.0" prefHeight="50.0" prefWidth="30.0">
+                                                                                                                    <children>
+                                                                                                                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#addFormDataEntry" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                                                            <VBox.margin>
+                                                                                                                                <Insets left="5.0" right="10.0" />
+                                                                                                                            </VBox.margin>
+                                                                                                                            <font>
+                                                                                                                                <Font size="12.0" />
+                                                                                                                            </font>
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../icons-png/plus.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                                                        </Button>
+                                                                                                                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#deleteMultiFormDataAction" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                                                            <VBox.margin>
+                                                                                                                                <Insets left="5.0" right="10.0" top="5.0" />
+                                                                                                                            </VBox.margin>
+                                                                                                                            <font>
+                                                                                                                                <Font size="11.0" />
+                                                                                                                            </font>
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../icons-png/minus.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                                                        </Button>
+                                                                                                                        <Button maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#editFormDataEntry" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                                                            <VBox.margin>
+                                                                                                                                <Insets left="5.0" right="10.0" top="5.0" />
+                                                                                                                            </VBox.margin>
+                                                                                                                            <font>
+                                                                                                                                <Font size="12.0" />
+                                                                                                                            </font>
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../icons-material/edit-48px.svg.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                                                        </Button>
+                                                                                                                    </children>
+                                                                                                                </VBox>
+                                                                                                            </children>
+                                                                                                        </HBox>
+                                                                                                    </children>
+                                                                                                </AnchorPane>
+                                                                                            </content>
+                                                                                        </Tab>
+                                                                                    </tabs>
+                                                                                    <VBox.margin>
+                                                                                        <Insets bottom="2.0" />
+                                                                                    </VBox.margin>
+                                                                                </TabPane>
+                                                                            </children>
+                                                                        </VBox>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                    </tabs>
+                                                </TabPane>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                    <children>
+                                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+                                                    <children>
+                                                        <ToggleButton fx:id="responsePayloadButton" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showResponsePayloadTab" prefWidth="90.0" selected="true" styleClass="left-pill" stylesheets="@../css/pill_button.css" text="Response">
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="response" />
+                                                            </toggleGroup>
+                                                            <HBox.margin>
+                                                                <Insets />
+                                                            </HBox.margin>
+                                                        </ToggleButton>
+                                                        <ToggleButton maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showResponseHeadersTab" prefWidth="90.0" styleClass="center-pill" stylesheets="@../css/pill_button.css" text="Headers" toggleGroup="$response" HBox.hgrow="NEVER">
+                                                            <HBox.margin>
+                                                                <Insets />
+                                                            </HBox.margin>
+                                                        </ToggleButton>
+                                                        <ToggleButton layoutX="140.0" layoutY="12.0" maxWidth="90.0" minWidth="90.0" mnemonicParsing="false" onAction="#showResponseTestsTab" prefWidth="90.0" styleClass="right-pill" stylesheets="@../css/pill_button.css" text="Tests" toggleGroup="$response">
+                                                            <HBox.margin>
+                                                                <Insets right="5.0" />
+                                                            </HBox.margin></ToggleButton>
+                                                        <VBox fx:id="middleBar" alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <HBox fx:id="statusMessageWrapper" alignment="CENTER_RIGHT">
+                                                                    <children>
+                                                                        <TextFlow fx:id="statusMessage" textAlignment="RIGHT" HBox.hgrow="SOMETIMES" />
+                                                                    </children>
+                                                                </HBox>
+                                                            </children>
+                                                            <HBox.margin>
+                                                                <Insets right="10.0" />
+                                                            </HBox.margin>
+                                                        </VBox>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding></HBox>
+                                                <TabPane fx:id="responseTabs" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/hidden_tab.css" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                                    <tabs>
+                                                        <Tab text="response">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                                    <children>
+                                                                        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                            <children>
+                                                                                <HBox alignment="CENTER_LEFT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" VBox.vgrow="ALWAYS">
+                                                                                    <children>
+                                                                                        <ToggleButton fx:id="wrapButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#wrapResponse" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/wrap_text-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                                            <tooltip>
+                                                                                                <Tooltip graphicTextGap="2.0" text="Wrap line">
+                                                                                                    <font>
+                                                                                                        <Font size="12.0" />
+                                                                                                    </font>
+                                                                                                </Tooltip>
+                                                                                            </tooltip>
+                                                                                        </ToggleButton>
+                                                                                        <ToggleButton fx:id="formatButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#formatResponse" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/format_align_left-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                                            <tooltip>
+                                                                                                <Tooltip text="Format response">
+                                                                                                    <font>
+                                                                                                        <Font size="12.0" />
+                                                                                                    </font>
+                                                                                                </Tooltip>
+                                                                                            </tooltip>
+                                                                                        </ToggleButton>
+                                                                                        <Button maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#copyResponse" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/content_copy-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                                            <tooltip>
+                                                                                                <Tooltip text="Copy response">
+                                                                                                    <font>
+                                                                                                        <Font size="12.0" />
+                                                                                                    </font>
+                                                                                                </Tooltip>
+                                                                                            </tooltip>
+                                                                                        </Button>
+                                                                  <HBox alignment="CENTER_LEFT">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                     <children>
+                                                                                              <TextField fx:id="responseSearchText" prefHeight="28.0" prefWidth="222.0" stylesheets="@../css/url_editbox.css" />
+                                                                                              <Button maxHeight="26.0" maxWidth="30.0" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#findTextInResponseAction" prefHeight="26.0" prefWidth="30.0" stylesheets="@../css/button_simple.css">
+                                                                                                  <HBox.margin>
+                                                                                                      <Insets />
+                                                                                                  </HBox.margin>
+                                                                                                  <graphic>
+                                                                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                          <image>
+                                                                                                              <Image url="@../icons-material/search-48px.svg.png" />
+                                                                                                          </image>
+                                                                                                      </ImageView>
+                                                                                                  </graphic>
+                                                                           <tooltip>
+                                                                              <Tooltip text="Search" />
+                                                                           </tooltip>
+                                                                                              </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                                        <Button alignment="CENTER" maxHeight="26.0" maxWidth="30.0" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#responseSearchFindPrevious" prefHeight="26.0" prefWidth="30.0" stylesheets="@../css/button_simple.css">
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="20.0" />
+                                                                                            </HBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/chevron_left-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Find previous" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button alignment="CENTER" contentDisplay="RIGHT" maxHeight="26.0" maxWidth="30.0" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#responseSearchFindNext" prefHeight="26.0" prefWidth="30.0" stylesheets="@../css/button_simple.css">
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/chevron_right-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                                            <HBox.margin>
+                                                                                                <Insets left="5.0" />
+                                                                                            </HBox.margin>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Find next" />
+                                                                     </tooltip></Button>
+                                                                                        <HBox alignment="CENTER_LEFT" style="-fx-font-family: Courier New; -fx-font-size: 12;" HBox.hgrow="ALWAYS">
+                                                                                            <children>
+                                                                                                <Label fx:id="searchItemCountLabel" stylesheets="@../css/searchItemCountLabel.css">
+                                                                                                    <padding>
+                                                                                                        <Insets left="20.0" />
+                                                                                                    </padding>
+                                                                                                </Label>
+                                                                                            </children>
+                                                                                        </HBox>
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <WebView fx:id="responseBody" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" />
+                                                                            </children>
+                                                                        </VBox>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="headers">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                                    <children>
+                                                                        <TableView fx:id="responseHeaders" editable="true" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/parameters_editors.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                                    </children></AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab text="tests">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                                    <children>
+                                                                        <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                            <children>
+                                                                                <TableView fx:id="responseTests" editable="true" stylesheets="@../css/parameters_editors.css" tableMenuButtonVisible="true" HBox.hgrow="ALWAYS">
+                                                                                    <HBox.margin>
+                                                                                        <Insets right="5.0" />
+                                                                                    </HBox.margin>
+                                                                                </TableView>
+                                                                                <VBox alignment="TOP_CENTER" minWidth="30.0" prefHeight="50.0" prefWidth="30.0">
+                                                                                    <children>
+                                                                                        <Button fx:id="addResponseTestButton" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#addResponseTest" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <font>
+                                                                                                <Font size="12.0" />
+                                                                                            </font>
+                                                                                            <VBox.margin>
+                                                                                                <Insets left="5.0" right="10.0" />
+                                                                                            </VBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-png/plus.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Add test" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#deleteResponseTest" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <font>
+                                                                                                <Font size="12.0" />
+                                                                                            </font>
+                                                                                            <VBox.margin>
+                                                                                                <Insets left="5.0" right="10.0" top="5.0" />
+                                                                                            </VBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-png/minus.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Delete test" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                        <Button maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#editResponseTest" prefHeight="25.0" prefWidth="25.0" stylesheets="@../css/button_simple.css">
+                                                                                            <font>
+                                                                                                <Font size="12.0" />
+                                                                                            </font>
+                                                                                            <VBox.margin>
+                                                                                                <Insets left="5.0" right="10.0" top="5.0" />
+                                                                                            </VBox.margin>
+                                                                                            <graphic>
+                                                                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                    <image>
+                                                                                                        <Image url="@../icons-material/edit-48px.svg.png" />
+                                                                                                    </image>
+                                                                                                </ImageView>
+                                                                                            </graphic>
+                                                                     <tooltip>
+                                                                        <Tooltip text="Edit test" />
+                                                                     </tooltip>
+                                                                                        </Button>
+                                                                                    </children>
+                                                                                </VBox>
+                                                                            </children>
+                                                                        </HBox>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                    </tabs>
+                                                </TabPane>
+                                            </children>
+                                            <padding>
+                                                <Insets top="5.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                    <GridPane.margin>
+                        <Insets top="5.0" />
+                    </GridPane.margin></AnchorPane>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+@font-face {
+    src: url('SourceCodePro-Regular.ttf');
+}
+
+.text-area {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+    -fx-background-insets: 0;
+    -fx-background-color: #c4c4c4;
+    -fx-border-width: 0px;
+}
+
+.text-area:focused {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+    -fx-background-insets: 0;
+    -fx-background-color: #c4c4c4;
+    -fx-border-width: 0px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/*************************************************************/
+
+.dark_theme .text-area {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #FFFFFF;
+    -fx-display-caret:true;
+    -fx-control-inner-background: #4c4c4c;
+    -fx-border-width: 0px;
+    -fx-text-box-border: a6a6a6 ;
+    -fx-focus-color: a6a6a6 ;
+}
+
+.dark_theme .text-area:focused {
+    -fx-font-family: "Source Code Pro Regular";
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-font-size: 12;
+    -fx-text-fill: #FFFFFF;
+    -fx-display-caret:true;
+    -fx-control-inner-background: #4c4c4c;
+    -fx-border-width: 0px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-box-border: a6a6a6 ;
+    -fx-focus-color: a6a6a6 ;
+}

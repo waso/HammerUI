@@ -1,0 +1,106 @@
+.proxy_top_bar {
+    -fx-background-color:  #4c4c4c;
+}
+
+.anchor {
+    -fx-background-color: #4c4c4c ;
+}
+
+.button {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, white;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: black;
+}
+
+.label
+{
+    -fx-text-fill: black;
+}
+
+/*************************************************/
+
+.dark_theme,
+.dark_theme .label,
+.dark_theme .radio-button,
+.dark_theme .check-box {
+    -fx-background-color:  #4c4c4c;
+    -fx-text-fill: white;
+}
+
+.dark_theme .list-view {
+    -fx-border-width: 0px;
+    -fx-border-color: #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-accent: #7d7c7c;
+    -fx-focus-color: #7d7c7c;
+    -fx-padding: 0 0 0 0;
+    /*-fx-background-color: #7d7c7c;*/
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0, 0, 0;
+}
+
+.dark_theme .list-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.dark_theme .list-view:selected {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 0 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.dark_theme .list-cell:selected {
+    -fx-background-color: #ababab;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+
+
+
+.dark_theme .list-view .list-cell:even {
+    -fx-background-color: #7d7c7c;
+    -fx-text-fill: white;
+}
+.dark_theme .list-view .list-cell:odd {
+    -fx-background-color: #7d7c7c;
+    -fx-text-fill: white;
+}
+
+
+
+.dark_theme .list-view .list-cell:selected {
+    -fx-background-color: #ababab;
+    -fx-text-fill: white;
+}
+
+.dark_theme .button {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .button:hover {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, #ababab;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+

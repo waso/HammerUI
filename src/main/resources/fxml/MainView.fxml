@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/context_menu.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.wsojka.hammerui.controllers.MainViewController">
+    <children>
+        <VBox layoutX="72.0" layoutY="62.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar fx:id="menuBar" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="800.0" stylesheets="@../css/menu.css">
+                    <menus>
+                        <Menu text="%file_menu_label">
+                            <items>
+                        <MenuItem mnemonicParsing="false" onAction="#addNewRequestAction" text="%view_add_new_request_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#addNewFolderAction" text="%view_add_new_folder_label" />
+                                <MenuItem mnemonicParsing="false" onAction="#menuFileStartNewProject" text="%file_menu_new_project_label" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem mnemonicParsing="false" onAction="#menuFileOpen" text="%file_menu_open_label" />
+                                <Menu fx:id="openRecent" mnemonicParsing="false" text="%file_menu_open_recent_label" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem onAction="#menuFileSaveHandle" text="%file_menu_save_label" />
+                                <MenuItem mnemonicParsing="false" onAction="#menuFileSaveAsHandle" text="%file_menu_save_as_label" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitApp" text="%file_menu_close_label" />
+                            </items>
+                        </Menu>
+                  <Menu mnemonicParsing="false" text="%language_menu_label">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#setEnglish" text="%language_english_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#setPolish" text="%language_polish_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#setChinese" text="%language_chinese_label" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="%file_menu_settings_label">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openApplicationSettings" text="%file_menu_application_settings_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#openProjectSettings" text="%file_menu_project_settings_label" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="%view_label">
+                     <items>
+                        <MenuItem fx:id="hideProjectTreeMenuItem" mnemonicParsing="false" onAction="#showHideTreeView" text="%view_hide_project_tree_label" />
+                        <MenuItem fx:id="hideRequestDetailsMenuItem" mnemonicParsing="false" onAction="#toggleRequestDetails" text="%view_hide_request_details_label" />
+                        <MenuItem fx:id="switchOrientationMenuItem" mnemonicParsing="false" onAction="#changeSplitOrientation" text="%view_horizontal_view_label" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeAllOpenTabs" text="%view_close_all_tabs_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeCurrentTab" text="%view_close_current_tab_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeOtherTabs" text="%tab_context_close_other_tabs_label" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeTabsOnRight" text="%tab_context_close_tabs_on_right_label" />
+                     </items>
+                  </Menu>
+                        <Menu mnemonicParsing="false" text="%help_menu_label">
+                            <items>
+                        <MenuItem mnemonicParsing="false" onAction="#getExecutorLogs" text="%help_menu_log_label" />
+                                <MenuItem mnemonicParsing="false" onAction="#aboutViewOpen" text="%help_menu_about_label" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #4c4c4c; -fx-border-radius: 0 0 0 0;">
+                    <children>
+                        <Button maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#addNewRequestAction" prefHeight="20.0" prefWidth="20.0" style="-fx-background-radius: 5 5 5 5; -fx-border-radius: 0 0 0 0; -fx-background-insets: -1.4, 0, 1, 2; -fx-background-color: 000000;">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" right="15.0" />
+                            </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons-white/file-plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="add new request" />
+                     </tooltip>
+                        </Button>
+                        <Button maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#addNewFolderAction" prefHeight="20.0" prefWidth="20.0" style="-fx-background-radius: 5 5 5 5; -fx-border-radius: 0 0 0 0; -fx-background-insets: -1.4, 0, 1, 2; -fx-background-color: 000000;">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="15.0" />
+                            </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons-white/folder-plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="add new folder" />
+                     </tooltip>
+                        </Button>
+                        <Button maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#showHideTreeView" prefHeight="20.0" prefWidth="20.0" style="-fx-background-radius: 5 5 5 5; -fx-background-color: 000000; -fx-border-radius: 0 0 0 0; -fx-background-insets: -1.4, 0, 1, 2;" textAlignment="CENTER">
+                            <HBox.margin>
+                                <Insets right="15.0" />
+                            </HBox.margin>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons-white/sidebar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="show/hide project tree" />
+                     </tooltip></Button>
+                  <Button maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#changeSplitOrientation" prefHeight="20.0" prefWidth="20.0" style="-fx-background-radius: 5 5 5 5; -fx-background-color: 000000; -fx-border-radius: 0 0 0 0; -fx-background-insets: -1.4, 0, 1, 2;">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons-white/layout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="change view orientation" />
+                     </tooltip>
+                  </Button>
+                        <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="326.0" HBox.hgrow="ALWAYS">
+                            <children>
+                        <MenuButton fx:id="editEnvironments" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" styleClass="dropdown-menu" stylesheets="@../css/envs.css" text="%edit_environments_label" />
+                        <MenuButton fx:id="editProxies" layoutX="56.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" styleClass="dropdown-menu" stylesheets="@../css/envs.css" text="%edit_proxy_label">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </MenuButton>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox VBox.vgrow="ALWAYS">
+                    <children>
+                        <SplitPane id="hiddenSplitter" fx:id="hiddenSplitter" dividerPositions="0.25" stylesheets="@../css/main_splitpane.css" HBox.hgrow="ALWAYS">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" stylesheets="" SplitPane.resizableWithParent="false">
+                                    <children>
+                                        <TreeView fx:id="projectTree" onKeyPressed="#handleRequestKeyPressed" onMouseClicked="#handleRequestDoubleClickedEvent" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/main.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane>
+                                    <children>
+                                        <TabPane fx:id="tabPane" styleClass="tab" stylesheets="@../css/tab.css" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS">
+                                            <tabs>
+                                            </tabs>
+                                        </TabPane>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+
+
+                    </children>
+                </HBox>
+            </children></VBox>
+    </children>
+</AnchorPane>

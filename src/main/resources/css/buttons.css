@@ -1,0 +1,28 @@
+.request_nav_button {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 13;
+    /* -fx-background-color: #14cc4f; */
+    -fx-background-color: #8a8a8a;
+    /* -fx-background-color: #34a8eb; */
+    /* -fx-background-color: #ff3b14; */
+    -fx-text-fill: white ;
+    -fx-background-insets: 0;
+    -fx-padding: 3 10 3 10;
+    -fx-border-color: #8a8a8a;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.request_nav_button:hover {
+    -fx-background-color: #b5b5b5;
+}
+
+.request_nav_button:pressed {
+    -fx-background-color: #b5b5b5;
+}
+
+.request_nav_button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

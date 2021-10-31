@@ -1,0 +1,10 @@
+.text-area {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 14;
+    -fx-text-fill: #000000;
+    -fx-display-caret:true;
+}
+
+.text-area .content {
+    -fx-background-color: #ffffff;
+}

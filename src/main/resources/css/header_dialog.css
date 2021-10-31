@@ -1,0 +1,119 @@
+.dark_theme,
+.dark_theme .label,
+.dark_theme .radio-button,
+.dark_theme .check-box {
+    -fx-background-color:  #4c4c4c;
+    -fx-text-fill: white;
+}
+
+.dark_theme .list-view {
+    -fx-border-width: 0px;
+    -fx-border-color: #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-accent: #7d7c7c;
+    -fx-focus-color: #7d7c7c;
+    -fx-padding: 0 0 0 0;
+    /*-fx-background-color: #7d7c7c;*/
+    -fx-background-insets: 0, 0, 0;
+    -fx-background-radius: 0, 0, 0;
+}
+
+.dark_theme .list-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.dark_theme .list-view:selected {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0 0 0 0;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+}
+
+.dark_theme .list-cell:selected {
+    -fx-background-color: #ababab;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+
+
+
+.dark_theme .list-view .list-cell:even {
+    -fx-background-color: #4c4c4c;
+    -fx-text-fill: white;
+}
+.dark_theme .list-view .list-cell:odd {
+    -fx-background-color: #4c4c4c;
+    -fx-text-fill: white;
+}
+
+
+
+.dark_theme .list-view .list-cell:selected {
+    -fx-background-color: #ababab;
+    -fx-text-fill: white;
+}
+
+.dark_theme .button {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, #7d7c7c;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+.dark_theme .button:hover {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #c4c4c4, #ababab;
+    -fx-border-insets: 0 0 0 0;
+    -fx-border-radius: 0 0 0 0;
+    -fx-text-fill: white;
+}
+
+
+/*******************************************************************************/
+
+.dark_theme .choice-box {
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+
+    -fx-mark-color: #e0e0e0;
+}
+
+.dark_theme .choice-box > .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #a6a6a6, #4c4c4c;
+}
+
+.dark_theme .choice-box .context-menu {
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #4c4c4c;
+}
+
+.dark_theme .choice-box .menu-item:hover {
+    -fx-background-color: #9e9e9e;
+}
+.dark_theme .choice-box .menu-item:hover > .label {
+    -fx-text-fill: black;
+    -fx-background-insets: 1, 2;
+    -fx-background-color: #9e9e9e;
+}
+
+
+.dark_theme .choice-box .menu-item:checked {
+    -fx-background-color: #68a4fc;
+}
+.dark_theme .choice-box .menu-item:checked > .label {
+    -fx-text-fill: black;
+    -fx-background-insets: 0;
+    -fx-background-color: #68a4fc;
+}

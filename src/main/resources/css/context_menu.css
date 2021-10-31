@@ -1,0 +1,8 @@
+.dark_theme .context-menu {
+    -fx-background-color: #595757;
+    -fx-text-fill: white ;
+}
+
+.dark_theme .context-menu .label {
+    -fx-text-fill: white ;
+}
