@@ -3,6 +3,7 @@ It is a standalone JavaFX application that doesn't require Java to be installed 
 Java runtime is embedded in the executable.
 Java and JavaFX version is 16.
 
+![app](https://hammerui.com/img/hammerui_screen.png)
 
 Building overview
 ----------------------
