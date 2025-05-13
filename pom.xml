@@ -5,14 +5,14 @@
 
     <groupId>com.wsojka.hammerui</groupId>
     <artifactId>hammerui</artifactId>
-    <version>1.8</version>
+    <version>1.9</version>
     <packaging>jar</packaging>
 
     <description>hammerui</description>
 
     <properties>
-        <java.version>16.0.1</java.version>
-        <javafx_version>16</javafx_version>
+        <java.version>24.0.1</java.version>
+        <javafx_version>24.0.1</javafx_version>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <timestamp>${maven.build.timestamp}</timestamp>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,6 +20,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
 
         <dependency>
             <groupId>commons-io</groupId>
@@ -31,12 +36,6 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>23.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.9</version>
         </dependency>
 
         <dependency>
@@ -195,40 +194,54 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.wsojka.hammerui.UIStarter</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
             </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.5</version>
+                <version>0.0.8</version>
                 <executions>
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.wsojka.hammerui.Main</mainClass>
+                            <runtimePathOption>MODULEPATH</runtimePathOption>
+                            <mainClass>com.wsojka.hammerui.UIStarter</mainClass>
                             <options>
                                 <option>-XX:+UseSerialGC</option>
+                                <option>--module-path /Users/waldemar/javafx-sdk-24.0.1/lib/</option>
+                                <option>--add-modules javafx.controls,javafx.fxml,javafx.graphics</option>
                                 <option>-Xlog:gc</option>
                                 <option>-Dorg.apache.commons.logging.Log=com.wsojka.hammerui.log.InMemoryLog</option>
                                 <option>-Dorg.apache.commons.logging.simplelog.showdatetime=true</option>
                                 <option>-Dorg.apache.commons.logging.simplelog.log.org.apache.http=DEBUG</option>
                             </options>
-                            <executable>/usr/lib/jvm/jdk-16.0.1/bin/java</executable>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>debug</id>
-                        <configuration>
-                            <options>
-                                <option>-XX:+UseSerialGC</option>
-                                <option>-Dorg.apache.commons.logging.Log=com.wsojka.hammerui.log.InMemoryLog</option>
-                                <option>-Dorg.apache.commons.logging.simplelog.showdatetime=true</option>
-                                <option>-Dorg.apache.commons.logging.simplelog.log.org.apache.http=DEBUG</option>
-                                <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=127.0.0.1:8000</option>
-                            </options>
-                            <mainClass>com.wsojka.hammerui.Main</mainClass>
-                            <executable>/usr/lib/jvm/jdk-16.0.1/bin/java</executable>
+                            <executable>/Users/waldemar/.sdkman/candidates/java/current/bin/java</executable>
                         </configuration>
                     </execution>
                 </executions>
@@ -244,9 +257,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>16</release>
-                    <source>16</source>
-                    <target>16</target>
+                    <release>24</release>
+                    <source>24</source>
+                    <target>24</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -254,7 +267,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.wsojka.hammerui.Main</mainClass>
+                            <mainClass>com.wsojka.hammerui.UIStarter</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

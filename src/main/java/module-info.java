@@ -41,5 +41,5 @@ module hammerui {
     opens com.wsojka.hammerui.service;
     opens com.wsojka.hammerui.tests;
     opens com.wsojka.hammerui.utils;
-    exports com.wsojka.hammerui to javafx.graphics;
+    exports com.wsojka.hammerui;
 }
